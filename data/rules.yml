@@ -1,0 +1,13 @@
+version: "3.1"
+
+rules:
+
+- rule: Répondre avec OpenAI pour la discussion libre
+  steps:
+  - intent: chat
+  - action: action_openai_response
+
+- rule: Utiliser OpenAI lorsque la compréhension est incertaine
+  steps:
+  - intent: nlu_fallback
+  - action: action_openai_response

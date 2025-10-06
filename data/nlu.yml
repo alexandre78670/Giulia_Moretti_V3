@@ -1,0 +1,33 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - salut
+    - bonjour
+    - coucou
+    - bonsoir
+    - hey
+    - hello
+
+- intent: goodbye
+  examples: |
+    - au revoir
+    - à plus
+    - bonne soirée
+    - à bientôt
+    - bye
+    - ciao
+
+- intent: chat
+  examples: |
+    - Peux-tu m'aider avec un conseil ?
+    - J'ai une question sur un sujet.
+    - Parlons de quelque chose d'important.
+    - Que penses-tu de cette idée ?
+    - Dis-m'en plus.
+    - Explique-moi simplement.
+    - J'ai besoin d'aide.
+    - J'aimerais ton avis.
+    - J'ai un problème à résoudre.
+    - Donne-moi des suggestions.

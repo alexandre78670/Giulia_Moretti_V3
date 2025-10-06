@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: giulia-bot-web
+    env: python
+    rootDir: giulia-bot
+    buildCommand: pip install -r requirements.txt && pip install -r actions/requirements.txt && rasa train
+    startCommand: rasa run --enable-api --cors "*" --debug
+    plan: free
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: TELEGRAM_WEBHOOK_URL
+        sync: false
+    autoDeploy: true
+
+  - type: worker
+    name: giulia-bot-actions
+    env: python
+    rootDir: giulia-bot
+    buildCommand: pip install -r requirements.txt && pip install -r actions/requirements.txt
+    startCommand: rasa run actions
+    plan: free
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+    autoDeploy: true
+
